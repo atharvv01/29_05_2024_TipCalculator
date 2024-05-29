@@ -24,6 +24,11 @@ struct ContentView: View {
                 
                 TextField("Enter total", text: $total)
                     .textFieldStyle(.roundedBorder)
+                    /*
+                     Here we are adding identifier so that we can access the value
+                     in ui testing
+                     */
+                    .accessibilityIdentifier("totalTextField")
                 
                 Picker(selection: $tipPercentage) {
                     Text("10%").tag(0.1)

@@ -39,5 +39,24 @@ class when_content_view_is_shown: XCTestCase {
         continueAfterFailure = false
         //this will launch our application
         app.launch()
+        
+        /*
+         Now since we are checking for default percentage value selected ,
+         which is implement using segment control so we will access it using
+         segmented controls
+         */
+        let tipPercentageSegmentedControl = app.segmentedControls["tipPercentageSegementedControl"]
+        
+        //now we want to see what index of segment control is selected
+        let segmentedControlButton = tipPercentageSegmentedControl.buttons.element(boundBy: 1)
+        
+        /*
+         This only checks weather that particular index of segement control has the same value or not ,
+         but we need to checkw wether it is selected or not
+         */
+        XCTAssertEqual(segmentedControlButton.label, "20%")
+        
+        //to check wether its selected or not we can do following
+        XCTAssertTrue(segmentedControlButton.isSelected)
     }
 }

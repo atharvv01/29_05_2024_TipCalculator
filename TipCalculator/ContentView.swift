@@ -37,7 +37,7 @@ struct ContentView: View {
                 } label: {
                     EmptyView()
                 }.pickerStyle(.segmented)
-
+                    .accessibilityIdentifier("tipPercentageSegementedControl")
                 
                 Button("Calculate Tip") {
                   
